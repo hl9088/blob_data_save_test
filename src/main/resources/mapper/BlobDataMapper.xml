@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lhl.blob.mapper.BlobDataMapper">
+
+    <!--测试保存大数据-->
+    <insert id="save" parameterType="BlobBean">
+      insert into test (id, content, text)
+      values (#{id}, #{content}, #{text})
+    </insert>
+
+    <select id="select" parameterType="java.lang.String" resultType="BlobBean">
+        select id, content, text from test where id = #{id}
+    </select>
+</mapper>
